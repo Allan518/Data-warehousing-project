@@ -1,0 +1,744 @@
+[0m20:34:21.272684 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105d28830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107067c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107067b10>]}
+
+
+============================== 20:34:21.274917 | 459b9889-5786-4686-8325-994fec55140a ==============================
+[0m20:34:21.274917 [info ] [MainThread]: Running with dbt=1.11.0-b4
+[0m20:34:21.275163 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'static_parser': 'True', 'write_json': 'True', 'introspect': 'True', 'version_check': 'True', 'target_path': 'None', 'log_format': 'default', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'debug': 'False', 'no_print': 'None', 'empty': 'None', 'invocation_command': 'dbt debug', 'use_colors': 'True', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'profiles_dir': '/Users/allanzhang/.dbt', 'log_path': '/Users/allanzhang/dbt/energy/logs', 'quiet': 'False', 'partial_parse': 'True'}
+[0m20:34:21.282926 [info ] [MainThread]: dbt version: 1.11.0-b4
+[0m20:34:21.283094 [info ] [MainThread]: python version: 3.13.5
+[0m20:34:21.283199 [info ] [MainThread]: python path: /Users/allanzhang/dbt/dbt-env/bin/python3.13
+[0m20:34:21.283288 [info ] [MainThread]: os info: macOS-15.6.1-arm64-arm-64bit-Mach-O
+[0m20:34:22.724016 [info ] [MainThread]: Using profiles dir at /Users/allanzhang/.dbt
+[0m20:34:22.724241 [info ] [MainThread]: Using profiles.yml file at /Users/allanzhang/.dbt/profiles.yml
+[0m20:34:22.724328 [info ] [MainThread]: Using dbt_project.yml file at /Users/allanzhang/dbt/energy/dbt_project.yml
+[0m20:34:22.724401 [info ] [MainThread]: adapter type: bigquery
+[0m20:34:22.724473 [info ] [MainThread]: adapter version: 1.10.3
+[0m20:34:22.760728 [info ] [MainThread]: Configuration:
+[0m20:34:22.760977 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m20:34:22.761080 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m20:34:22.761164 [info ] [MainThread]: Required dependencies:
+[0m20:34:22.761332 [debug] [MainThread]: Executing "git --help"
+[0m20:34:22.801501 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m20:34:22.801968 [debug] [MainThread]: STDERR: "b''"
+[0m20:34:22.802099 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m20:34:22.802228 [info ] [MainThread]: Connection:
+[0m20:34:22.802360 [info ] [MainThread]:   method: oauth
+[0m20:34:22.802451 [info ] [MainThread]:   database: deep-dispatch-470520-r6
+[0m20:34:22.802530 [info ] [MainThread]:   execution_project: deep-dispatch-470520-r6
+[0m20:34:22.802611 [info ] [MainThread]:   schema: energy
+[0m20:34:22.802681 [info ] [MainThread]:   location: US
+[0m20:34:22.802753 [info ] [MainThread]:   priority: interactive
+[0m20:34:22.802826 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m20:34:22.802896 [info ] [MainThread]:   impersonate_service_account: None
+[0m20:34:22.802969 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m20:34:22.803037 [info ] [MainThread]:   job_retries: 1
+[0m20:34:22.803107 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m20:34:22.803177 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m20:34:22.803246 [info ] [MainThread]:   timeout_seconds: 300
+[0m20:34:22.803316 [info ] [MainThread]:   client_id: None
+[0m20:34:22.803381 [info ] [MainThread]:   token_uri: None
+[0m20:34:22.803451 [info ] [MainThread]:   compute_region: None
+[0m20:34:22.803518 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m20:34:22.803586 [info ] [MainThread]:   gcs_bucket: None
+[0m20:34:22.803654 [info ] [MainThread]:   dataproc_batch: None
+[0m20:34:22.803917 [info ] [MainThread]: Registered adapter: bigquery=1.10.3
+[0m20:34:22.900664 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m20:34:22.900976 [debug] [MainThread]: On debug: select 1 as id
+[0m20:34:22.901102 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:34:29.112278 [debug] [MainThread]: BigQuery adapter: Got an error when attempting to create a bigquery " "client: 'Runtime Error
+  Failed to authenticate with supplied credentials
+  error:
+  Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.'
+[0m20:34:29.113369 [debug] [MainThread]: BigQuery adapter: Unhandled error while running:
+select 1 as id
+[0m20:34:29.113842 [debug] [MainThread]: BigQuery adapter: Database Error
+  Runtime Error
+    Failed to authenticate with supplied credentials
+    error:
+    Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+[0m20:34:29.114178 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m20:34:29.114447 [info ] [MainThread]: [31m1 check failed:[0m
+[0m20:34:29.114645 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >'NoneType' object has no attribute 'close'
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m20:34:29.119806 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 7.8812523, "process_in_blocks": "0", "process_kernel_time": 0.346281, "process_mem_max_rss": "373145600", "process_out_blocks": "0", "process_user_time": 1.301334}
+[0m20:34:29.120830 [debug] [MainThread]: Command `dbt debug` failed at 20:34:29.120718 after 7.88 seconds
+[0m20:34:29.121254 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1605d1350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1605fa330>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1603698c0>]}
+[0m20:34:29.121625 [debug] [MainThread]: Flushing usage events
+[0m20:34:29.306172 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:02:04.601133 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1068bc830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107703c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107703b10>]}
+
+
+============================== 21:02:04.603499 | c74a7299-58ad-4806-8445-fe7de0e9ab9a ==============================
+[0m21:02:04.603499 [info ] [MainThread]: Running with dbt=1.11.0-b4
+[0m21:02:04.603729 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'log_format': 'default', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'target_path': 'None', 'log_path': '/Users/allanzhang/dbt/energy/logs', 'write_json': 'True', 'warn_error': 'None', 'no_print': 'None', 'quiet': 'False', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'version_check': 'True', 'introspect': 'True', 'printer_width': '80', 'use_colors': 'True', 'debug': 'False', 'empty': 'None', 'indirect_selection': 'eager', 'profiles_dir': '/Users/allanzhang/.dbt'}
+[0m21:02:04.610726 [info ] [MainThread]: dbt version: 1.11.0-b4
+[0m21:02:04.610891 [info ] [MainThread]: python version: 3.13.5
+[0m21:02:04.610992 [info ] [MainThread]: python path: /Users/allanzhang/dbt/dbt-env/bin/python3.13
+[0m21:02:04.611077 [info ] [MainThread]: os info: macOS-15.6.1-arm64-arm-64bit-Mach-O
+[0m21:02:05.850230 [info ] [MainThread]: Using profiles dir at /Users/allanzhang/.dbt
+[0m21:02:05.850425 [info ] [MainThread]: Using profiles.yml file at /Users/allanzhang/.dbt/profiles.yml
+[0m21:02:05.850522 [info ] [MainThread]: Using dbt_project.yml file at /Users/allanzhang/dbt/energy/dbt_project.yml
+[0m21:02:05.882655 [info ] [MainThread]: Configuration:
+[0m21:02:05.882830 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m21:02:05.882935 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m21:02:05.883023 [info ] [MainThread]: Required dependencies:
+[0m21:02:05.883160 [debug] [MainThread]: Executing "git --help"
+[0m21:02:05.904007 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m21:02:05.904436 [debug] [MainThread]: STDERR: "b''"
+[0m21:02:05.904549 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m21:02:05.904655 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m21:02:05.904756 [info ] [MainThread]: [31m1 check failed:[0m
+[0m21:02:05.904837 [info ] [MainThread]: Profile loading failed for the following reason:
+Runtime Error
+  Credentials in profile "energy", target "dev" invalid: Runtime Error
+    Got duplicate keys: (timeout_seconds) all map to "job_execution_timeout_seconds"
+
+
+[0m21:02:05.906853 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 1.3330669, "process_in_blocks": "0", "process_kernel_time": 0.247461, "process_mem_max_rss": "371851264", "process_out_blocks": "0", "process_user_time": 1.139844}
+[0m21:02:05.907340 [debug] [MainThread]: Command `dbt debug` failed at 21:02:05.907296 after 1.33 seconds
+[0m21:02:05.907563 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1069e28b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11834d130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118268f30>]}
+[0m21:02:05.907744 [debug] [MainThread]: Flushing usage events
+[0m21:02:06.105378 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:05:05.080105 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1059bc830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106c67c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106c67b10>]}
+
+
+============================== 21:05:05.081821 | 67929d51-8217-41ee-b8fd-3bc7126142a6 ==============================
+[0m21:05:05.081821 [info ] [MainThread]: Running with dbt=1.11.0-b4
+[0m21:05:05.082043 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'invocation_command': 'dbt debug', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'cache_selected_only': 'False', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'version_check': 'True', 'use_colors': 'True', 'introspect': 'True', 'log_path': '/Users/allanzhang/dbt/energy/logs', 'use_experimental_parser': 'False', 'log_format': 'default', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'write_json': 'True', 'debug': 'False', 'warn_error': 'None', 'profiles_dir': '/Users/allanzhang/.dbt', 'partial_parse': 'True', 'empty': 'None', 'quiet': 'False', 'no_print': 'None'}
+[0m21:05:05.085521 [info ] [MainThread]: dbt version: 1.11.0-b4
+[0m21:05:05.085645 [info ] [MainThread]: python version: 3.13.5
+[0m21:05:05.085738 [info ] [MainThread]: python path: /Users/allanzhang/dbt/dbt-env/bin/python3.13
+[0m21:05:05.085823 [info ] [MainThread]: os info: macOS-15.6.1-arm64-arm-64bit-Mach-O
+[0m21:05:05.849994 [info ] [MainThread]: Using profiles dir at /Users/allanzhang/.dbt
+[0m21:05:05.850190 [info ] [MainThread]: Using profiles.yml file at /Users/allanzhang/.dbt/profiles.yml
+[0m21:05:05.850298 [info ] [MainThread]: Using dbt_project.yml file at /Users/allanzhang/dbt/energy/dbt_project.yml
+[0m21:05:05.850386 [info ] [MainThread]: adapter type: bigquery
+[0m21:05:05.850477 [info ] [MainThread]: adapter version: 1.10.3
+[0m21:05:05.882272 [info ] [MainThread]: Configuration:
+[0m21:05:05.882427 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m21:05:05.882526 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m21:05:05.882613 [info ] [MainThread]: Required dependencies:
+[0m21:05:05.882746 [debug] [MainThread]: Executing "git --help"
+[0m21:05:05.899708 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m21:05:05.900064 [debug] [MainThread]: STDERR: "b''"
+[0m21:05:05.900167 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m21:05:05.900269 [info ] [MainThread]: Connection:
+[0m21:05:05.900395 [info ] [MainThread]:   method: service-account
+[0m21:05:05.900478 [info ] [MainThread]:   database: deep-dispatch-470520-r6
+[0m21:05:05.900555 [info ] [MainThread]:   execution_project: deep-dispatch-470520-r6
+[0m21:05:05.900630 [info ] [MainThread]:   schema: energy
+[0m21:05:05.900701 [info ] [MainThread]:   location: us-central1
+[0m21:05:05.900777 [info ] [MainThread]:   priority: interactive
+[0m21:05:05.900857 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m21:05:05.900931 [info ] [MainThread]:   impersonate_service_account: None
+[0m21:05:05.901002 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m21:05:05.901074 [info ] [MainThread]:   job_retries: 1
+[0m21:05:05.901143 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m21:05:05.901214 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m21:05:05.901286 [info ] [MainThread]:   timeout_seconds: 300
+[0m21:05:05.901355 [info ] [MainThread]:   client_id: None
+[0m21:05:05.901427 [info ] [MainThread]:   token_uri: None
+[0m21:05:05.901496 [info ] [MainThread]:   compute_region: None
+[0m21:05:05.901566 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m21:05:05.901635 [info ] [MainThread]:   gcs_bucket: None
+[0m21:05:05.901705 [info ] [MainThread]:   dataproc_batch: None
+[0m21:05:05.901951 [info ] [MainThread]: Registered adapter: bigquery=1.10.3
+[0m21:05:05.969330 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m21:05:05.969625 [debug] [MainThread]: On debug: select 1 as id
+[0m21:05:05.969753 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:05:07.019056 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=deep-dispatch-470520-r6&j=bq:us-central1:17faaed5-236f-439e-aed5-30454d5b2bb5&page=queryresults
+[0m21:05:07.484602 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m21:05:07.485566 [info ] [MainThread]: [32mAll checks passed![0m
+[0m21:05:07.492217 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 2.43627, "process_in_blocks": "0", "process_kernel_time": 0.241631, "process_mem_max_rss": "378175488", "process_out_blocks": "0", "process_user_time": 1.230097}
+[0m21:05:07.492831 [debug] [MainThread]: Command `dbt debug` succeeded at 21:05:07.492726 after 2.44 seconds
+[0m21:05:07.493142 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m21:05:07.493453 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12ddd1e00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12ddfad50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12dc6a7a0>]}
+[0m21:05:07.493802 [debug] [MainThread]: Flushing usage events
+[0m21:05:07.700490 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:07:49.257184 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1061f8830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10703fc50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10703fb10>]}
+
+
+============================== 21:07:49.258918 | 41e71f25-4413-4482-bad3-2cddaa7eb3af ==============================
+[0m21:07:49.258918 [info ] [MainThread]: Running with dbt=1.11.0-b4
+[0m21:07:49.259147 [debug] [MainThread]: running dbt with arguments {'profiles_dir': '/Users/allanzhang/.dbt', 'use_colors': 'True', 'version_check': 'True', 'log_format': 'default', 'quiet': 'False', 'printer_width': '80', 'static_parser': 'True', 'introspect': 'True', 'debug': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'target_path': 'None', 'empty': 'False', 'indirect_selection': 'eager', 'invocation_command': 'dbt run', 'warn_error': 'None', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'write_json': 'True', 'fail_fast': 'False', 'log_cache_events': 'False', 'log_path': '/Users/allanzhang/dbt/energy/logs'}
+[0m21:07:50.072135 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '41e71f25-4413-4482-bad3-2cddaa7eb3af', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1063a9480>]}
+[0m21:07:50.090869 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '41e71f25-4413-4482-bad3-2cddaa7eb3af', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12d0be250>]}
+[0m21:07:50.091085 [info ] [MainThread]: Registered adapter: bigquery=1.10.3
+[0m21:07:50.162534 [debug] [MainThread]: checksum: 57e51233fb2305050a86c940b93938a4d3a51a7b95f45f76840a20ffa12695aa, vars: {}, profile: , target: , version: 1.11.0b4
+[0m21:07:50.162881 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m21:07:50.163014 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '41e71f25-4413-4482-bad3-2cddaa7eb3af', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12d043850>]}
+[0m21:07:50.633582 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '41e71f25-4413-4482-bad3-2cddaa7eb3af', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106934aa0>]}
+[0m21:07:50.659231 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/allanzhang/dbt/energy/target/manifest.json
+[0m21:07:50.659939 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/allanzhang/dbt/energy/target/semantic_manifest.json
+[0m21:07:50.670444 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '41e71f25-4413-4482-bad3-2cddaa7eb3af', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12d4dbd90>]}
+[0m21:07:50.670602 [info ] [MainThread]: Found 2 models, 4 data tests, 510 macros
+[0m21:07:50.670707 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '41e71f25-4413-4482-bad3-2cddaa7eb3af', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12e200bb0>]}
+[0m21:07:50.671326 [info ] [MainThread]: 
+[0m21:07:50.671446 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m21:07:50.671532 [info ] [MainThread]: 
+[0m21:07:50.671694 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m21:07:50.673018 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_deep-dispatch-470520-r6'
+[0m21:07:50.673173 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:07:51.365184 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_deep-dispatch-470520-r6, now create_deep-dispatch-470520-r6_energy)
+[0m21:07:51.366309 [debug] [ThreadPool]: Creating schema "database: "deep-dispatch-470520-r6"
+schema: "energy"
+"
+[0m21:07:51.375749 [debug] [ThreadPool]: On create_deep-dispatch-470520-r6_energy: /* {"app": "dbt", "dbt_version": "1.11.0b4", "profile_name": "energy", "target_name": "dev", "connection_name": "create_deep-dispatch-470520-r6_energy"} */
+create schema if not exists `deep-dispatch-470520-r6`.`energy`
+  
+[0m21:07:51.376087 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m21:07:51.973396 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=deep-dispatch-470520-r6&j=bq:us-central1:5db37d3c-40ac-44e4-b13a-e2c145178efa&page=queryresults
+[0m21:07:52.733402 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_deep-dispatch-470520-r6_energy, now list_deep-dispatch-470520-r6_energy)
+[0m21:07:52.733665 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m21:07:53.209158 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '41e71f25-4413-4482-bad3-2cddaa7eb3af', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x139ddc290>]}
+[0m21:07:53.210212 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:07:53.216330 [debug] [Thread-1 (]: Began running node model.energy.my_first_dbt_model
+[0m21:07:53.217040 [info ] [Thread-1 (]: 1 of 2 START sql table model energy.my_first_dbt_model ......................... [RUN]
+[0m21:07:53.217488 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_deep-dispatch-470520-r6_energy, now model.energy.my_first_dbt_model)
+[0m21:07:53.217755 [debug] [Thread-1 (]: Began compiling node model.energy.my_first_dbt_model
+[0m21:07:53.223892 [debug] [Thread-1 (]: Writing injected SQL for node "model.energy.my_first_dbt_model"
+[0m21:07:53.224631 [debug] [Thread-1 (]: Began executing node model.energy.my_first_dbt_model
+[0m21:07:53.246317 [debug] [Thread-1 (]: Writing runtime sql for node "model.energy.my_first_dbt_model"
+[0m21:07:53.246824 [debug] [Thread-1 (]: On model.energy.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.11.0b4", "profile_name": "energy", "target_name": "dev", "node_id": "model.energy.my_first_dbt_model"} */
+
+  
+    
+
+    create or replace table `deep-dispatch-470520-r6`.`energy`.`my_first_dbt_model`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+    );
+  
+[0m21:07:53.247026 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:07:54.029171 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=deep-dispatch-470520-r6&j=bq:us-central1:b1ed4636-4c1a-4449-91e2-5b8b7a6e7fe9&page=queryresults
+[0m21:07:55.768000 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '41e71f25-4413-4482-bad3-2cddaa7eb3af', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x139e78e10>]}
+[0m21:07:55.768628 [info ] [Thread-1 (]: 1 of 2 OK created sql table model energy.my_first_dbt_model .................... [[32mCREATE TABLE (2.0 rows, 0 processed)[0m in 2.55s]
+[0m21:07:55.769045 [debug] [Thread-1 (]: Finished running node model.energy.my_first_dbt_model
+[0m21:07:55.769657 [debug] [Thread-1 (]: Began running node model.energy.my_second_dbt_model
+[0m21:07:55.770130 [info ] [Thread-1 (]: 2 of 2 START sql view model energy.my_second_dbt_model ......................... [RUN]
+[0m21:07:55.770463 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.energy.my_first_dbt_model, now model.energy.my_second_dbt_model)
+[0m21:07:55.770738 [debug] [Thread-1 (]: Began compiling node model.energy.my_second_dbt_model
+[0m21:07:55.772886 [debug] [Thread-1 (]: Writing injected SQL for node "model.energy.my_second_dbt_model"
+[0m21:07:55.773465 [debug] [Thread-1 (]: Began executing node model.energy.my_second_dbt_model
+[0m21:07:55.784308 [debug] [Thread-1 (]: Writing runtime sql for node "model.energy.my_second_dbt_model"
+[0m21:07:55.784673 [debug] [Thread-1 (]: On model.energy.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.11.0b4", "profile_name": "energy", "target_name": "dev", "node_id": "model.energy.my_second_dbt_model"} */
+
+
+  create or replace view `deep-dispatch-470520-r6`.`energy`.`my_second_dbt_model`
+  OPTIONS()
+  as -- Use the `ref` function to select from other models
+
+select *
+from `deep-dispatch-470520-r6`.`energy`.`my_first_dbt_model`
+where id = 1;
+
+
+[0m21:07:55.784852 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:07:56.480465 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=deep-dispatch-470520-r6&j=bq:us-central1:786b8673-b09a-4ff8-98ee-34aa01f264b0&page=queryresults
+[0m21:07:56.771030 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '41e71f25-4413-4482-bad3-2cddaa7eb3af', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12d4c9310>]}
+[0m21:07:56.772003 [info ] [Thread-1 (]: 2 of 2 OK created sql view model energy.my_second_dbt_model .................... [[32mCREATE VIEW (0 processed)[0m in 1.00s]
+[0m21:07:56.772570 [debug] [Thread-1 (]: Finished running node model.energy.my_second_dbt_model
+[0m21:07:56.774057 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m21:07:56.775704 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:07:56.775955 [debug] [MainThread]: Connection 'model.energy.my_second_dbt_model' was properly closed.
+[0m21:07:56.776190 [info ] [MainThread]: 
+[0m21:07:56.776421 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 6.10 seconds (6.10s).
+[0m21:07:56.777043 [debug] [MainThread]: Command end result
+[0m21:07:56.796125 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/allanzhang/dbt/energy/target/manifest.json
+[0m21:07:56.797045 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/allanzhang/dbt/energy/target/semantic_manifest.json
+[0m21:07:56.800354 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/allanzhang/dbt/energy/target/run_results.json
+[0m21:07:56.800498 [info ] [MainThread]: 
+[0m21:07:56.800679 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m21:07:56.800822 [info ] [MainThread]: 
+[0m21:07:56.800969 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m21:07:56.803960 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 7.572727, "process_in_blocks": "0", "process_kernel_time": 0.284098, "process_mem_max_rss": "396705792", "process_out_blocks": "0", "process_user_time": 2.134923}
+[0m21:07:56.804222 [debug] [MainThread]: Command `dbt run` succeeded at 21:07:56.804171 after 7.57 seconds
+[0m21:07:56.804395 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12e6b5450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12e431750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10709a970>]}
+[0m21:07:56.804562 [debug] [MainThread]: Flushing usage events
+[0m21:07:57.003321 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:08:50.962615 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a9c830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110f67c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110f67b10>]}
+
+
+============================== 21:08:50.964197 | 9a3a0348-1b41-4aab-9577-32a4c9266c25 ==============================
+[0m21:08:50.964197 [info ] [MainThread]: Running with dbt=1.11.0-b4
+[0m21:08:50.964430 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'target_path': 'None', 'printer_width': '80', 'warn_error': 'None', 'log_format': 'default', 'static_parser': 'True', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_path': '/Users/allanzhang/dbt/energy/logs', 'fail_fast': 'False', 'profiles_dir': '/Users/allanzhang/.dbt', 'debug': 'False', 'empty': 'False', 'introspect': 'True', 'use_experimental_parser': 'False', 'use_colors': 'True', 'no_print': 'None', 'version_check': 'True', 'write_json': 'True', 'cache_selected_only': 'False', 'quiet': 'False', 'log_cache_events': 'False', 'invocation_command': 'dbt run'}
+[0m21:08:51.753716 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9a3a0348-1b41-4aab-9577-32a4c9266c25', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107c4d480>]}
+[0m21:08:51.772105 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9a3a0348-1b41-4aab-9577-32a4c9266c25', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x137abe250>]}
+[0m21:08:51.772314 [info ] [MainThread]: Registered adapter: bigquery=1.10.3
+[0m21:08:51.842236 [debug] [MainThread]: checksum: 57e51233fb2305050a86c940b93938a4d3a51a7b95f45f76840a20ffa12695aa, vars: {}, profile: , target: , version: 1.11.0b4
+[0m21:08:51.872136 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m21:08:51.872310 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '9a3a0348-1b41-4aab-9577-32a4c9266c25', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x137a42f50>]}
+[0m21:08:52.322903 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9a3a0348-1b41-4aab-9577-32a4c9266c25', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x139296120>]}
+[0m21:08:52.346385 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/allanzhang/dbt/energy/target/manifest.json
+[0m21:08:52.347048 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/allanzhang/dbt/energy/target/semantic_manifest.json
+[0m21:08:52.355424 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9a3a0348-1b41-4aab-9577-32a4c9266c25', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x137c6a7b0>]}
+[0m21:08:52.355577 [info ] [MainThread]: Found 2 models, 4 data tests, 510 macros
+[0m21:08:52.355681 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9a3a0348-1b41-4aab-9577-32a4c9266c25', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1392d98b0>]}
+[0m21:08:52.356283 [info ] [MainThread]: 
+[0m21:08:52.356399 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m21:08:52.356482 [info ] [MainThread]: 
+[0m21:08:52.356641 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m21:08:52.357966 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_deep-dispatch-470520-r6'
+[0m21:08:52.358118 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:08:52.896519 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_deep-dispatch-470520-r6, now list_deep-dispatch-470520-r6_energy)
+[0m21:08:52.897441 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m21:08:53.429838 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9a3a0348-1b41-4aab-9577-32a4c9266c25', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1391610d0>]}
+[0m21:08:53.430482 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:08:53.434003 [debug] [Thread-1 (]: Began running node model.energy.my_first_dbt_model
+[0m21:08:53.434504 [info ] [Thread-1 (]: 1 of 2 START sql table model energy.my_first_dbt_model ......................... [RUN]
+[0m21:08:53.434902 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_deep-dispatch-470520-r6_energy, now model.energy.my_first_dbt_model)
+[0m21:08:53.435159 [debug] [Thread-1 (]: Began compiling node model.energy.my_first_dbt_model
+[0m21:08:53.441839 [debug] [Thread-1 (]: Writing injected SQL for node "model.energy.my_first_dbt_model"
+[0m21:08:53.442455 [debug] [Thread-1 (]: Began executing node model.energy.my_first_dbt_model
+[0m21:08:53.451976 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:08:53.933184 [debug] [Thread-1 (]: Writing runtime sql for node "model.energy.my_first_dbt_model"
+[0m21:08:53.933987 [debug] [Thread-1 (]: On model.energy.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.11.0b4", "profile_name": "energy", "target_name": "dev", "node_id": "model.energy.my_first_dbt_model"} */
+
+  
+    
+
+    create or replace table `deep-dispatch-470520-r6`.`energy`.`my_first_dbt_model`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+    );
+  
+[0m21:08:54.541640 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=deep-dispatch-470520-r6&j=bq:us-central1:21359df5-c83e-492a-a3e7-057dff02a10d&page=queryresults
+[0m21:08:56.273172 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9a3a0348-1b41-4aab-9577-32a4c9266c25', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13950eba0>]}
+[0m21:08:56.273753 [info ] [Thread-1 (]: 1 of 2 OK created sql table model energy.my_first_dbt_model .................... [[32mCREATE TABLE (2.0 rows, 0 processed)[0m in 2.84s]
+[0m21:08:56.274140 [debug] [Thread-1 (]: Finished running node model.energy.my_first_dbt_model
+[0m21:08:56.274714 [debug] [Thread-1 (]: Began running node model.energy.my_second_dbt_model
+[0m21:08:56.275060 [info ] [Thread-1 (]: 2 of 2 START sql table model energy.my_second_dbt_model ........................ [RUN]
+[0m21:08:56.275402 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.energy.my_first_dbt_model, now model.energy.my_second_dbt_model)
+[0m21:08:56.275618 [debug] [Thread-1 (]: Began compiling node model.energy.my_second_dbt_model
+[0m21:08:56.277398 [debug] [Thread-1 (]: Writing injected SQL for node "model.energy.my_second_dbt_model"
+[0m21:08:56.277840 [debug] [Thread-1 (]: Began executing node model.energy.my_second_dbt_model
+[0m21:08:56.279483 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:08:56.856239 [debug] [Thread-1 (]: Writing runtime sql for node "model.energy.my_second_dbt_model"
+[0m21:08:56.857809 [debug] [Thread-1 (]: On model.energy.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.11.0b4", "profile_name": "energy", "target_name": "dev", "node_id": "model.energy.my_second_dbt_model"} */
+
+  
+    
+
+    create or replace table `deep-dispatch-470520-r6`.`energy`.`my_second_dbt_model`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      -- Use the `ref` function to select from other models
+
+select *
+from `deep-dispatch-470520-r6`.`energy`.`my_first_dbt_model`
+where id = 1
+    );
+  
+[0m21:08:57.304599 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=deep-dispatch-470520-r6&j=bq:us-central1:d1c923ed-0337-49c3-ab81-3167b089bdae&page=queryresults
+[0m21:08:59.056794 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9a3a0348-1b41-4aab-9577-32a4c9266c25', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13ac76710>]}
+[0m21:08:59.058012 [info ] [Thread-1 (]: 2 of 2 OK created sql table model energy.my_second_dbt_model ................... [[32mCREATE TABLE (1.0 rows, 8.0 Bytes processed)[0m in 2.78s]
+[0m21:08:59.058662 [debug] [Thread-1 (]: Finished running node model.energy.my_second_dbt_model
+[0m21:08:59.060012 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m21:08:59.061697 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:08:59.061904 [debug] [MainThread]: Connection 'model.energy.my_second_dbt_model' was properly closed.
+[0m21:08:59.062166 [info ] [MainThread]: 
+[0m21:08:59.062386 [info ] [MainThread]: Finished running 2 table models in 0 hours 0 minutes and 6.71 seconds (6.71s).
+[0m21:08:59.063002 [debug] [MainThread]: Command end result
+[0m21:08:59.082278 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/allanzhang/dbt/energy/target/manifest.json
+[0m21:08:59.083230 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/allanzhang/dbt/energy/target/semantic_manifest.json
+[0m21:08:59.086530 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/allanzhang/dbt/energy/target/run_results.json
+[0m21:08:59.086676 [info ] [MainThread]: 
+[0m21:08:59.086833 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m21:08:59.086947 [info ] [MainThread]: 
+[0m21:08:59.087080 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m21:08:59.089293 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 8.152329, "process_in_blocks": "0", "process_kernel_time": 0.251599, "process_mem_max_rss": "389316608", "process_out_blocks": "0", "process_user_time": 2.073168}
+[0m21:08:59.089495 [debug] [MainThread]: Command `dbt run` succeeded at 21:08:59.089451 after 8.15 seconds
+[0m21:08:59.089648 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1391a4350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ee7750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110fc6970>]}
+[0m21:08:59.089786 [debug] [MainThread]: Flushing usage events
+[0m21:08:59.266987 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:09:10.346158 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1067b4830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1075fb9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1075fbb10>]}
+
+
+============================== 21:09:10.347714 | f8c6ec55-9c40-4c03-9b36-1a81cf3afca4 ==============================
+[0m21:09:10.347714 [info ] [MainThread]: Running with dbt=1.11.0-b4
+[0m21:09:10.347944 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'cache_selected_only': 'False', 'no_print': 'None', 'invocation_command': 'dbt docs generate', 'partial_parse': 'True', 'fail_fast': 'False', 'empty': 'None', 'log_path': '/Users/allanzhang/dbt/energy/logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'use_experimental_parser': 'False', 'version_check': 'True', 'printer_width': '80', 'warn_error': 'None', 'log_format': 'default', 'quiet': 'False', 'target_path': 'None', 'introspect': 'True', 'indirect_selection': 'eager', 'debug': 'False', 'use_colors': 'True', 'profiles_dir': '/Users/allanzhang/.dbt'}
+[0m21:09:11.114162 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f8c6ec55-9c40-4c03-9b36-1a81cf3afca4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106965480>]}
+[0m21:09:11.132972 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f8c6ec55-9c40-4c03-9b36-1a81cf3afca4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12e2be250>]}
+[0m21:09:11.133173 [info ] [MainThread]: Registered adapter: bigquery=1.10.3
+[0m21:09:11.200334 [debug] [MainThread]: checksum: 57e51233fb2305050a86c940b93938a4d3a51a7b95f45f76840a20ffa12695aa, vars: {}, profile: , target: , version: 1.11.0b4
+[0m21:09:11.235277 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m21:09:11.235418 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m21:09:11.248098 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f8c6ec55-9c40-4c03-9b36-1a81cf3afca4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12ebb6250>]}
+[0m21:09:11.254293 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f8c6ec55-9c40-4c03-9b36-1a81cf3afca4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12ebfd400>]}
+[0m21:09:11.254447 [info ] [MainThread]: Found 2 models, 4 data tests, 510 macros
+[0m21:09:11.254565 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f8c6ec55-9c40-4c03-9b36-1a81cf3afca4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12eedcbb0>]}
+[0m21:09:11.255212 [info ] [MainThread]: 
+[0m21:09:11.255340 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m21:09:11.255431 [info ] [MainThread]: 
+[0m21:09:11.255601 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m21:09:11.256891 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_deep-dispatch-470520-r6_energy'
+[0m21:09:11.257042 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:09:11.709710 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f8c6ec55-9c40-4c03-9b36-1a81cf3afca4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12eec9980>]}
+[0m21:09:11.710319 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:09:11.713726 [debug] [Thread-1 (]: Began running node model.energy.my_first_dbt_model
+[0m21:09:11.714051 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_deep-dispatch-470520-r6_energy, now model.energy.my_first_dbt_model)
+[0m21:09:11.714313 [debug] [Thread-1 (]: Began compiling node model.energy.my_first_dbt_model
+[0m21:09:11.722089 [debug] [Thread-1 (]: Writing injected SQL for node "model.energy.my_first_dbt_model"
+[0m21:09:11.722715 [debug] [Thread-1 (]: Began executing node model.energy.my_first_dbt_model
+[0m21:09:11.722956 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:09:11.724153 [debug] [Thread-1 (]: Finished running node model.energy.my_first_dbt_model
+[0m21:09:11.724698 [debug] [Thread-1 (]: Began running node model.energy.my_second_dbt_model
+[0m21:09:11.724987 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.energy.my_first_dbt_model, now model.energy.my_second_dbt_model)
+[0m21:09:11.725177 [debug] [Thread-1 (]: Began compiling node model.energy.my_second_dbt_model
+[0m21:09:11.726700 [debug] [Thread-1 (]: Writing injected SQL for node "model.energy.my_second_dbt_model"
+[0m21:09:11.727053 [debug] [Thread-1 (]: Began executing node model.energy.my_second_dbt_model
+[0m21:09:11.727228 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:09:11.728209 [debug] [Thread-1 (]: Finished running node model.energy.my_second_dbt_model
+[0m21:09:11.728413 [debug] [Thread-1 (]: Began running node test.energy.not_null_my_first_dbt_model_id.5fb22c2710
+[0m21:09:11.728636 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.energy.my_second_dbt_model, now test.energy.not_null_my_first_dbt_model_id.5fb22c2710)
+[0m21:09:11.728871 [debug] [Thread-1 (]: Began compiling node test.energy.not_null_my_first_dbt_model_id.5fb22c2710
+[0m21:09:11.735645 [debug] [Thread-1 (]: Writing injected SQL for node "test.energy.not_null_my_first_dbt_model_id.5fb22c2710"
+[0m21:09:11.736082 [debug] [Thread-1 (]: Began executing node test.energy.not_null_my_first_dbt_model_id.5fb22c2710
+[0m21:09:11.736255 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:09:11.737198 [debug] [Thread-1 (]: Finished running node test.energy.not_null_my_first_dbt_model_id.5fb22c2710
+[0m21:09:11.737377 [debug] [Thread-1 (]: Began running node test.energy.unique_my_first_dbt_model_id.16e066b321
+[0m21:09:11.737549 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.energy.not_null_my_first_dbt_model_id.5fb22c2710, now test.energy.unique_my_first_dbt_model_id.16e066b321)
+[0m21:09:11.737691 [debug] [Thread-1 (]: Began compiling node test.energy.unique_my_first_dbt_model_id.16e066b321
+[0m21:09:11.740471 [debug] [Thread-1 (]: Writing injected SQL for node "test.energy.unique_my_first_dbt_model_id.16e066b321"
+[0m21:09:11.740741 [debug] [Thread-1 (]: Began executing node test.energy.unique_my_first_dbt_model_id.16e066b321
+[0m21:09:11.740882 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:09:11.741688 [debug] [Thread-1 (]: Finished running node test.energy.unique_my_first_dbt_model_id.16e066b321
+[0m21:09:11.741841 [debug] [Thread-1 (]: Began running node test.energy.not_null_my_second_dbt_model_id.151b76d778
+[0m21:09:11.741996 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.energy.unique_my_first_dbt_model_id.16e066b321, now test.energy.not_null_my_second_dbt_model_id.151b76d778)
+[0m21:09:11.742129 [debug] [Thread-1 (]: Began compiling node test.energy.not_null_my_second_dbt_model_id.151b76d778
+[0m21:09:11.743980 [debug] [Thread-1 (]: Writing injected SQL for node "test.energy.not_null_my_second_dbt_model_id.151b76d778"
+[0m21:09:11.744227 [debug] [Thread-1 (]: Began executing node test.energy.not_null_my_second_dbt_model_id.151b76d778
+[0m21:09:11.744358 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:09:11.745096 [debug] [Thread-1 (]: Finished running node test.energy.not_null_my_second_dbt_model_id.151b76d778
+[0m21:09:11.745236 [debug] [Thread-1 (]: Began running node test.energy.unique_my_second_dbt_model_id.57a0f8c493
+[0m21:09:11.745370 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.energy.not_null_my_second_dbt_model_id.151b76d778, now test.energy.unique_my_second_dbt_model_id.57a0f8c493)
+[0m21:09:11.745501 [debug] [Thread-1 (]: Began compiling node test.energy.unique_my_second_dbt_model_id.57a0f8c493
+[0m21:09:11.746956 [debug] [Thread-1 (]: Writing injected SQL for node "test.energy.unique_my_second_dbt_model_id.57a0f8c493"
+[0m21:09:11.747171 [debug] [Thread-1 (]: Began executing node test.energy.unique_my_second_dbt_model_id.57a0f8c493
+[0m21:09:11.747298 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:09:11.748005 [debug] [Thread-1 (]: Finished running node test.energy.unique_my_second_dbt_model_id.57a0f8c493
+[0m21:09:11.748461 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:09:11.748634 [debug] [MainThread]: Connection 'test.energy.unique_my_second_dbt_model_id.57a0f8c493' was properly closed.
+[0m21:09:11.749160 [debug] [MainThread]: Command end result
+[0m21:09:11.781552 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/allanzhang/dbt/energy/target/manifest.json
+[0m21:09:11.782333 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/allanzhang/dbt/energy/target/semantic_manifest.json
+[0m21:09:11.784770 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/allanzhang/dbt/energy/target/run_results.json
+[0m21:09:11.786109 [debug] [MainThread]: Acquiring new bigquery connection 'generate_catalog'
+[0m21:09:11.786197 [info ] [MainThread]: Building catalog
+[0m21:09:11.787828 [debug] [ThreadPool]: Acquiring new bigquery connection 'deep-dispatch-470520-r6.information_schema'
+[0m21:09:11.794746 [debug] [ThreadPool]: On deep-dispatch-470520-r6.information_schema: /* {"app": "dbt", "dbt_version": "1.11.0b4", "profile_name": "energy", "target_name": "dev", "connection_name": "deep-dispatch-470520-r6.information_schema"} */
+
+    with
+                table_shards_stage as (
+    select
+        tables.project_id as table_catalog,
+        tables.dataset_id as table_schema,
+        coalesce(REGEXP_EXTRACT(tables.table_id, '^(.+)[0-9]{8}$'), tables.table_id) as table_name,
+        tables.table_id as shard_name,
+        REGEXP_EXTRACT(tables.table_id, '^.+([0-9]{8})$') as shard_index,
+        REGEXP_CONTAINS(tables.table_id, '^.+[0-9]{8}$') and tables.type = 1 as is_date_shard,
+        case
+            when materialized_views.table_name is not null then 'materialized view'
+            when tables.type = 1 then 'table'
+            when tables.type = 2 then 'view'
+            else 'external'
+        end as table_type,
+        tables.type = 1 as is_table,
+        JSON_VALUE(table_description.option_value) as table_comment,
+        tables.size_bytes,
+        tables.row_count
+    from `deep-dispatch-470520-r6`.`energy`.__TABLES__ tables
+    left join `deep-dispatch-470520-r6`.`energy`.INFORMATION_SCHEMA.MATERIALIZED_VIEWS materialized_views
+        on materialized_views.table_catalog = tables.project_id
+        and materialized_views.table_schema = tables.dataset_id
+        and materialized_views.table_name = tables.table_id
+    left join `deep-dispatch-470520-r6`.`energy`.INFORMATION_SCHEMA.TABLE_OPTIONS table_description
+        on table_description.table_catalog = tables.project_id
+        and table_description.table_schema = tables.dataset_id
+        and table_description.table_name = tables.table_id
+        and table_description.option_name = 'description'
+),
+                table_shards as (
+                    select * from table_shards_stage
+                    where ((
+                                upper(table_schema) = upper('energy')
+                            and upper(table_name) = upper('my_second_dbt_model')
+                            ) or (
+                                upper(table_schema) = upper('energy')
+                            and upper(table_name) = upper('my_first_dbt_model')
+                            ))
+                ),
+                tables as (
+    select distinct
+        table_catalog,
+        table_schema,
+        table_name,
+        is_date_shard,
+        table_type,
+        is_table,
+        table_comment
+    from table_shards
+),
+                table_stats as (
+    select
+        table_catalog,
+        table_schema,
+        table_name,
+        max(shard_name) as latest_shard_name,
+        min(shard_index) as shard_min,
+        max(shard_index) as shard_max,
+        count(shard_index) as shard_count,
+        sum(size_bytes) as size_bytes,
+        sum(row_count) as row_count
+    from table_shards
+    group by 1, 2, 3
+),
+
+                columns as (
+    select
+        columns.table_catalog,
+        columns.table_schema,
+        columns.table_name as shard_name,
+        coalesce(paths.field_path, '<unknown>') as column_name,
+        -- invent a row number to account for nested fields
+        -- BQ does not treat these nested properties as independent fields
+        row_number() over (
+            partition by
+                columns.table_catalog,
+                columns.table_schema,
+                columns.table_name
+            order by
+                columns.ordinal_position,
+                paths.field_path
+        ) as column_index,
+        coalesce(paths.data_type, '<unknown>') as column_type,
+        paths.description as column_comment,
+        case when columns.is_partitioning_column = 'YES' then 1 else 0 end as is_partitioning_column,
+        case when columns.is_partitioning_column = 'YES' then paths.field_path end as partition_column,
+        case when columns.clustering_ordinal_position is not null then 1 else 0 end as is_clustering_column,
+        case when columns.clustering_ordinal_position is not null then paths.field_path end as cluster_column,
+        columns.clustering_ordinal_position
+    from `deep-dispatch-470520-r6`.`energy`.INFORMATION_SCHEMA.COLUMNS columns
+    join `deep-dispatch-470520-r6`.`energy`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS paths
+        on paths.table_catalog = columns.table_catalog
+        and paths.table_schema = columns.table_schema
+        and paths.table_name = columns.table_name
+        and paths.column_name = columns.column_name
+    where columns.ordinal_position is not null
+),
+                column_stats as (
+    select
+        table_catalog,
+        table_schema,
+        shard_name,
+        max(is_partitioning_column) = 1 as is_partitioned,
+        max(partition_column) as partition_column,
+        max(is_clustering_column) = 1 as is_clustered,
+        array_to_string(
+            array_agg(
+                cluster_column ignore nulls
+                order by clustering_ordinal_position
+            ), ', '
+        ) as clustering_columns
+    from columns
+    group by 1, 2, 3
+)
+
+            
+    select
+        tables.table_catalog as table_database,
+        tables.table_schema,
+        case
+            when tables.is_date_shard then concat(tables.table_name, '*')
+            else tables.table_name
+        end as table_name,
+        tables.table_type,
+        tables.table_comment,
+        -- coalesce column metadata fields to ensure they are non-null for catalog generation
+        -- external table columns are not present in COLUMN_FIELD_PATHS
+        coalesce(columns.column_name, '<unknown>') as column_name,
+        coalesce(columns.column_index, 1) as column_index,
+        coalesce(columns.column_type, '<unknown>') as column_type,
+        coalesce(columns.column_comment, '') as column_comment,
+
+        'Shard count' as `stats__date_shards__label`,
+        table_stats.shard_count as `stats__date_shards__value`,
+        'The number of date shards in this table' as `stats__date_shards__description`,
+        tables.is_date_shard as `stats__date_shards__include`,
+
+        'Shard (min)' as `stats__date_shard_min__label`,
+        table_stats.shard_min as `stats__date_shard_min__value`,
+        'The first date shard in this table' as `stats__date_shard_min__description`,
+        tables.is_date_shard as `stats__date_shard_min__include`,
+
+        'Shard (max)' as `stats__date_shard_max__label`,
+        table_stats.shard_max as `stats__date_shard_max__value`,
+        'The last date shard in this table' as `stats__date_shard_max__description`,
+        tables.is_date_shard as `stats__date_shard_max__include`,
+
+        '# Rows' as `stats__num_rows__label`,
+        table_stats.row_count as `stats__num_rows__value`,
+        'Approximate count of rows in this table' as `stats__num_rows__description`,
+        tables.is_table as `stats__num_rows__include`,
+
+        'Approximate Size' as `stats__num_bytes__label`,
+        table_stats.size_bytes as `stats__num_bytes__value`,
+        'Approximate size of table as reported by BigQuery' as `stats__num_bytes__description`,
+        tables.is_table as `stats__num_bytes__include`,
+
+        'Partitioned By' as `stats__partitioning_type__label`,
+        column_stats.partition_column as `stats__partitioning_type__value`,
+        'The partitioning column for this table' as `stats__partitioning_type__description`,
+        column_stats.is_partitioned as `stats__partitioning_type__include`,
+
+        'Clustered By' as `stats__clustering_fields__label`,
+        column_stats.clustering_columns as `stats__clustering_fields__value`,
+        'The clustering columns for this table' as `stats__clustering_fields__description`,
+        column_stats.is_clustered as `stats__clustering_fields__include`
+
+    from tables
+    join table_stats
+        on table_stats.table_catalog = tables.table_catalog
+        and table_stats.table_schema = tables.table_schema
+        and table_stats.table_name = tables.table_name
+    left join column_stats
+        on column_stats.table_catalog = tables.table_catalog
+        and column_stats.table_schema = tables.table_schema
+        and column_stats.shard_name = table_stats.latest_shard_name
+    left join columns
+        on columns.table_catalog = tables.table_catalog
+        and columns.table_schema = tables.table_schema
+        and columns.shard_name = table_stats.latest_shard_name
+
+  
+[0m21:09:11.795021 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:09:12.510980 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=deep-dispatch-470520-r6&j=bq:us-central1:670f6a4d-f77f-40d8-95e7-07f1aaf7d429&page=queryresults
+[0m21:09:13.841162 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:09:13.849678 [debug] [MainThread]: Wrote artifact CatalogArtifact to /Users/allanzhang/dbt/energy/target/catalog.json
+[0m21:09:13.862372 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/allanzhang/dbt/energy/target/manifest.json
+[0m21:09:13.863181 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/allanzhang/dbt/energy/target/semantic_manifest.json
+[0m21:09:13.863327 [info ] [MainThread]: Catalog written to /Users/allanzhang/dbt/energy/target/catalog.json
+[0m21:09:13.865632 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 3.5435803, "process_in_blocks": "0", "process_kernel_time": 0.22365, "process_mem_max_rss": "391200768", "process_out_blocks": "0", "process_user_time": 1.463104}
+[0m21:09:13.865893 [debug] [MainThread]: Command `dbt docs generate` succeeded at 21:09:13.865841 after 3.54 seconds
+[0m21:09:13.866035 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m21:09:13.866148 [debug] [MainThread]: Connection 'deep-dispatch-470520-r6.information_schema' was properly closed.
+[0m21:09:13.866283 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107353dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12efc1de0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12efc17b0>]}
+[0m21:09:13.866444 [debug] [MainThread]: Flushing usage events
+[0m21:09:14.055635 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:09:20.713011 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106558830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10786b9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10786bb10>]}
+
+
+============================== 21:09:20.714573 | 9abae500-efad-4a91-9d80-566267da4bb1 ==============================
+[0m21:09:20.714573 [info ] [MainThread]: Running with dbt=1.11.0-b4
+[0m21:09:20.714795 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'target_path': 'None', 'no_print': 'None', 'use_experimental_parser': 'False', 'quiet': 'False', 'introspect': 'True', 'write_json': 'True', 'version_check': 'True', 'static_parser': 'True', 'log_format': 'default', 'partial_parse': 'True', 'invocation_command': 'dbt docs serve --port 8181', 'profiles_dir': '/Users/allanzhang/.dbt', 'use_colors': 'True', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'log_path': '/Users/allanzhang/dbt/energy/logs', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'empty': 'None', 'log_cache_events': 'False'}
+[0m21:09:21.567151 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9abae500-efad-4a91-9d80-566267da4bb1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106705480>]}
+[0m21:09:21.585282 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9abae500-efad-4a91-9d80-566267da4bb1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1510b6250>]}
+[0m21:09:54.990676 [error] [MainThread]: Encountered an error:
+
+[0m21:09:54.996296 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/allanzhang/dbt/dbt-env/lib/python3.13/site-packages/dbt/cli/requires.py", line 178, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/allanzhang/dbt/dbt-env/lib/python3.13/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/allanzhang/dbt/dbt-env/lib/python3.13/site-packages/dbt/cli/requires.py", line 272, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/allanzhang/dbt/dbt-env/lib/python3.13/site-packages/dbt/cli/requires.py", line 303, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/allanzhang/dbt/dbt-env/lib/python3.13/site-packages/dbt/cli/requires.py", line 350, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/allanzhang/dbt/dbt-env/lib/python3.13/site-packages/dbt/cli/main.py", line 307, in docs_serve
+    results = task.run()
+  File "/Users/allanzhang/dbt/dbt-env/lib/python3.13/site-packages/dbt/task/docs/serve.py", line 29, in run
+    httpd.serve_forever()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socketserver.py", line 235, in serve_forever
+    ready = selector.select(poll_interval)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/selectors.py", line 398, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
+
+[0m21:09:55.001189 [debug] [MainThread]: Resource report: {"command_name": "serve", "command_success": false, "command_wall_clock_time": 34.31229, "process_in_blocks": "0", "process_kernel_time": 0.179259, "process_mem_max_rss": "369770496", "process_out_blocks": "0", "process_user_time": 1.166905}
+[0m21:09:55.002905 [debug] [MainThread]: Command `dbt docs serve` failed at 21:09:55.002783 after 34.31 seconds
+[0m21:09:55.003443 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x151456450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x151456650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x15148cc80>]}
+[0m21:09:55.003810 [debug] [MainThread]: Flushing usage events
+[0m21:09:55.200673 [debug] [MainThread]: An error was encountered while trying to flush usage events
