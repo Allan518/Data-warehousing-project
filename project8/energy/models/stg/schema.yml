@@ -1,0 +1,65 @@
+version: 2
+
+sources:
+  - name: energy_raw
+    database: deep-dispatch-470520-r6
+    schema: energy_raw
+    tables:
+      - name: census_population
+      - name: eia_capacity
+      - name: eia_consumption
+      - name: eia_emissions
+      - name: ember_yearly_electricity
+      - name: iou_zipcodes
+      - name: irena_renewable_data
+      - name: us_solar_facilities
+
+models:
+  - name: census_population
+    tests:
+      - check_row_count_equals:
+          arguments:
+            raw_table: source('energy_raw', 'census_population')
+
+  - name: eia_capacity
+    tests:
+      - check_row_count_equals:
+          arguments:
+            raw_table: source('energy_raw', 'eia_capacity')
+
+  - name: eia_consumption
+    tests:
+      - check_row_count_equals:
+          arguments:
+            raw_table: source('energy_raw', 'eia_consumption')
+
+  - name: eia_emissions
+    tests:
+      - check_row_count_equals:
+          arguments:
+            raw_table: source('energy_raw', 'eia_emissions')
+
+  - name: ember_yearly_electricity
+    tests:
+      - check_row_count_equals:
+          arguments:
+            raw_table: source('energy_raw', 'ember_yearly_electricity')
+
+  - name: iou_zipcodes
+    tests:
+      - check_row_count_equals:
+          arguments:
+            raw_table: source('energy_raw', 'iou_zipcodes')
+
+  - name: irena_renewable_data
+    tests:
+      - check_row_count_equals:
+          arguments:
+            raw_table: source('energy_raw', 'irena_renewable_data')
+
+  - name: us_solar_facilities
+    tests:
+      - check_row_count_equals:
+          arguments:
+            raw_table: source('energy_raw', 'us_solar_facilities')
+
